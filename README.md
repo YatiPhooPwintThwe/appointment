@@ -11,25 +11,14 @@ Features
 🛫 Doctor leave (set in MySQL): leave days/times are blocked during booking
 
 ✉️ Email confirmations via Mailtrap after a successful booking
-
+Environment: Runs locally. Uses Mailtrap for dev email.
 
 Pages (UI)
-
-Home – shows the weekly schedule for each doctor (ignores leave for display only)
-
-Create (Book) – book an appointment; only actually available slots are selectable
-
-View (Appointments) – see your appointments + statuses (e.g., confirmed/cancelled)
 
 Screenshot (Weekly Schedule)
 
 <img width="1280" height="590" alt="image" src="https://github.com/user-attachments/assets/f33b5b60-ce00-477c-8a00-cae89c951c7a" />
 
-
-
-How “Doctor Leave” Works
-
-Admin sets leave in MySQL Workbench (e.g., table doctor_leave: doctor_id, leave_date, start_time, end_time, reason).
 
 During booking, the API excludes any time that overlaps leave ⇒ those slots are disabled in the UI. We won't be able to select time slot if we choose the date out of doctor's availability or if the doctor took leave on that day.
 
